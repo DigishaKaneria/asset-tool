@@ -22,4 +22,3 @@ node_modules/
 
 # Ignore build output outside of asset-tool (if any)
 dist/
-
