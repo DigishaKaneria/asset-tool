@@ -1,36 +1,25 @@
-# dependencies
-node_modules/
-.pnp
-.pnp.js
+# Ignore everything
+*
 
-# testing
-coverage/
+# Except the asset-tool directory
+!asset-tool/
+!asset-tool/**
 
-# production
-build/
-dist/
+# Optional: Ignore specific files within asset-tool
+asset-tool/.env
+asset-tool/node_modules/
+asset-tool/dist/
+asset-tool/*.log
 
-# misc
-.DS_Store
+# Ignore VSCode settings
 .vscode/
 
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Ignore node_modules outside of asset-tool (if any)
+node_modules/
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Ignore log files
 *.log
 
-# IDE specific
-.idea/
-.vscode/
+# Ignore build output outside of asset-tool (if any)
+dist/
 
-# Lock files
-package-lock.json
-yarn.lock
