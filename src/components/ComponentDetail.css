@@ -1,0 +1,110 @@
+.component-detail-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.component-info {
+  width: 60%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.component-info h4 {
+  font-weight: bold;
+  color: #333333;
+}
+
+.relations-container {
+  width: 35%;
+  margin-left: 20px;
+}
+
+.relations-paper {
+  padding: 20px;
+  background-color: #2e2e2e;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.graph-container {
+  height: 400px;
+  background-color: #333333;
+  border-radius: 10px;
+}
+
+.MuiButton-root {
+  margin: 5px;
+  background-color: #1976d2;
+  color: white;
+  font-weight: bold;
+}
+
+.MuiButton-root:hover {
+  background-color: #145a86;
+}
+
+a {
+  text-decoration: none;
+  color: #1976d2;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.MuiTableCell-root {
+  color: #333333;
+  font-weight: bold;
+}
+
+.MuiPaper-root {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.component-link {
+  color: #1976d2;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.component-link:hover {
+  color: #145a86;
+  text-decoration: underline;
+}
+
+.MuiButton-root {
+  transition: background-color 0.3s;
+}
+
+.MuiButton-root:hover {
+  background-color: #145a86;
+}
+
+.MuiTableRow-root:hover {
+  background-color: #f0f0f0;
+}
+
+.relations-paper {
+  transition: box-shadow 0.3s;
+}
+
+.relations-paper:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

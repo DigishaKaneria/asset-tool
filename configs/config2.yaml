@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: another-service
+  description: Another Service
+  tags:
+    - react
+    - microservice
+  links:
+    - url: https://example.com/api
+      title: API Documentation
+      icon: api
+  annotations:
+    backstage.io/source-template: template:default/react-template
+spec:
+  type: service
+  lifecycle: production
+  owner: team-b
+  system: artist-management
+  dependsOn: ["resource:users-db"]
+  apiConsumedBy: ["component:www-users"]

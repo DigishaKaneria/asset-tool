@@ -1,6 +1,3 @@
-# Ignore everything
-*
-
 # Except the asset-tool directory
 !asset-tool/
 !asset-tool/**
