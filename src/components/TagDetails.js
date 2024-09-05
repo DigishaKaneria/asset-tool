@@ -88,18 +88,9 @@ const TagDetails = () => {
           </Typography>
 
           {/* React-Flow component for displaying relationships */}
-          <Box sx={{ height: '300px', mt: 4 }}>
+          <Box sx={{ height: '400px', mt: 4 }}>
             <ReactFlow elements={[...nodes, ...edges]} fitView>
-              <MiniMap
-                nodeColor={(node) => {
-                  switch (node.id) {
-                    case 'tag-node':
-                      return '#1ABC9C';
-                    default:
-                      return '#D68910';
-                  }
-                }}
-              />
+              <MiniMap nodeColor={(node) => (node.id === 'tag-node' ? '#1ABC9C' : '#D68910')} />
               <Controls />
               <Background color="#aaa" gap={16} />
             </ReactFlow>
