@@ -1,0 +1,7 @@
+tags:
+  - name: "Frontend"
+    description: "Technologies related to client-side development."
+    category: "Development"
+  - name: "Backend"
+    description: "Server-side development technologies."
+    category: "Development"

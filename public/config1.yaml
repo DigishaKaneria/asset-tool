@@ -1,0 +1,7 @@
+tags:
+  - name: "DevOps"
+    description: "Practices for operations and development."
+    category: "Operations"
+  - name: "Cloud"
+    description: "Cloud computing services and platforms."
+    category: "Infrastructure"
