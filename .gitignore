@@ -1,18 +1,24 @@
-# dependencies
-node_modules/
-dist/
-build/
+# Ignore everything
+*
+
+# Except the asset-tool directory
+!asset-tool/
+!asset-tool/**
+
+# Optional: Ignore specific files within asset-tool
+asset-tool/.env
+asset-tool/node_modules/
+asset-tool/dist/
+asset-tool/*.log
+
+# Ignore VSCode settings
 .vscode/
 
-# environment variables
-.env
-.env.local
-.env.development.local
-.env.production.local
-.env.test.local
+# Ignore node_modules outside of asset-tool (if any)
+node_modules/
 
-# log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Ignore log files
 *.log
+
+# Ignore build output outside of asset-tool (if any)
+dist/
