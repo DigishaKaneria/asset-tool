@@ -232,6 +232,8 @@ const ComponentDetail = () => {
                     </a>
                   </div>
                 ))}
+
+                
               </Typography>
             </Box>
           </Grid2>
