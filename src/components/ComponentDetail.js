@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Typography, Paper } from "@mui/material";
+import { Typography, Paper, Grid2, Box } from "@mui/material";
 import ReactFlow, { Background } from 'react-flow-renderer';
 import "./ComponentDetail.css";
 
@@ -98,45 +98,86 @@ const ComponentDetail = () => {
   return (
     <> <div className="component-detail-container">
     <div className="component-info">
-      <Typography variant="h5" component="h2" gutterBottom>
+      {/* <Typography variant="h5" component="h2" gutterBottom>
           About
         </Typography>
       <Typography variant="h4" component="h1" gutterBottom>
         {metadata.name}
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        <strong>Description:</strong> {metadata.description}
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        <strong>Type:</strong> {spec.type}
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        <strong>Lifecycle:</strong> {spec.lifecycle}
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        <strong>Owner:</strong> {spec.owner}
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        <strong>System:</strong> {spec.system}
-      </Typography>
+      </Typography> */}
+      <Typography variant="h5" component="div" gutterBottom>
+          Desription
+        </Typography>
+        <Typography variant="h6" color="textSecondary">
+          {metadata.description}
+        </Typography>
 
-      <Typography variant="h6" gutterBottom>
-        Tags:
-      </Typography>
-      {metadata.tags.map((tag, index) => (
-        <span style={{border: '1px solid #460074', borderRadius: '20px', padding: '5px 16px', marginRight: '3px', color: '#460074'}}>{tag}</span>
-      ))}
+        <Grid2 container spacing={12} style={{ marginTop: 10 }}>
+          <Grid2 item xs={6}>
+            <Box>
+              <Typography variant="subtitle2" color="textSecondary">
+                Owner
+              </Typography>
+              <Typography variant="body2">{spec.owner}</Typography>
+            </Box>
+          </Grid2>
 
-      <Typography variant="h6" gutterBottom>
-        Links:
-      </Typography>
-      {metadata.links.map((link, index) => (
-        <div key={index}>
-          <a href={link.url} target="_blank" rel="noopener noreferrer" style={{color: '#460074'}}>
-            {link.title} (Icon: {link.icon})
-          </a>
-        </div>
-      ))}
+          <Grid2 item xs={6}>
+            <Box>
+              <Typography variant="subtitle2" color="textSecondary">
+                Type
+              </Typography>
+              <Typography variant="body2">{spec.type}</Typography>
+            </Box>
+          </Grid2>
+
+          <Grid2 item xs={6}>
+            <Box>
+              <Typography variant="subtitle2" color="textSecondary">
+                Lifecycle
+              </Typography>
+              <Typography variant="body2">{spec.lifecycle}</Typography>
+            </Box>
+          </Grid2>
+
+          <Grid2 item xs={6}>
+            <Box>
+              <Typography variant="subtitle2" color="textSecondary">
+                System
+              </Typography>
+              <Typography variant="body2">{spec.system}</Typography>
+            </Box>
+          </Grid2>
+
+          <Grid2 item xs={12}>
+            <Box>
+              <Typography variant="subtitle2" color="textSecondary">
+                Tags
+              </Typography>
+              <Typography variant="body2">
+                {metadata.tags.map((tag, index) => (
+                  <span style={{ border: '1px solid #460074', borderRadius: '20px', padding: '5px 16px', marginRight: '3px', color: '#460074' }}>{tag}</span>
+                ))}
+              </Typography>
+            </Box>
+          </Grid2>
+
+          <Grid2 item xs={12}>
+            <Box>
+              <Typography variant="subtitle2" color="textSecondary">
+                Links
+              </Typography>
+              <Typography variant="body2">
+                {metadata.links.map((link, index) => (
+                  <div key={index}>
+                    <a href={link.url} target="_blank" rel="noopener noreferrer" style={{ color: '#460074' }}>
+                      {link.title} (Icon: {link.icon})
+                    </a>
+                  </div>
+                ))}
+              </Typography>
+            </Box>
+          </Grid2>
+        </Grid2>
     </div>
 
     <div className="relations-container"  style={{'width':'80%'}} >
