@@ -57,7 +57,7 @@ const ComponentDetail = () => {
     ...spec.apiConsumedBy.map((api, index) => ({
       id: `api-${index}`,
       data: { label: api },
-      position: { x: 100, y: 300 + index * 100 },
+      position: { x: 20, y: 300 + index * 100 },
       style: {
         background: "#ADD8E6",
         border: "1px solid #4682B4",
@@ -232,8 +232,6 @@ const ComponentDetail = () => {
                     </a>
                   </div>
                 ))}
-
-                
               </Typography>
             </Box>
           </Grid2>
