@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="Group_27948" data-name="Group 27948" transform="translate(21317 15420)">
+    <g id="Rectangle_2103" data-name="Rectangle 2103" transform="translate(-21317 -15420)" fill="#fff" stroke="#707070" stroke-width="1" opacity="0">
+      <rect width="32" height="32" stroke="none"/>
+      <rect x="0.5" y="0.5" width="31" height="31" fill="none"/>
+    </g>
+    <path id="logo_mark" data-name="logo/mark" d="M54.707,22.6l17.654-6.566-17.654-6.9V0L84.95,12.177v7.584L54.707,32Z" transform="translate(-21370.707 -15420)" fill="#fff"/>
+  </g>
+</svg>

@@ -22,6 +22,8 @@ const ComponentDetail = () => {
     return <div>Loading...</div>;
   }
 
+  console.log('test')
+
   const { metadata, spec } = componentData;
 
   const nodes = [

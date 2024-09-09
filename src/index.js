@@ -8,12 +8,9 @@ import App from './App';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2', // Customize your primary color
+        main: '#460074',
     },
-    secondary: {
-      main: '#dc004e', // Customize your secondary color
-    },
-  },
+},
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
