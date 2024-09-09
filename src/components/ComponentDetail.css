@@ -14,11 +14,13 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
 }
 
 .component-info h4 {
   font-weight: bold;
   color: #333333;
+  font-family: sans-serif;
 }
 
 .relations-container {
@@ -45,6 +47,7 @@
   background-color: #1976d2;
   color: white;
   font-weight: bold;
+  font-family: sans-serif;
 }
 
 .MuiButton-root:hover {
@@ -69,6 +72,7 @@ table {
 .MuiTableCell-root {
   color: #333333;
   font-weight: bold;
+  font-family: sans-serif;
 }
 
 .MuiPaper-root {
@@ -82,6 +86,7 @@ table {
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s;
+  font-family: sans-serif;
 }
 
 .component-link:hover {
@@ -107,4 +112,46 @@ table {
 
 .relations-paper:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #460074;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+.navigationBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px;
+}
+
+.component-info {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.component-name {
+  font-size: 20px;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.metadata {
+  text-align: right;
+  font-family: sans-serif;
+}
+
+.owner,
+.lifecycle {
+  display: block;
+  font-size: 15px;
+  font-family: sans-serif;
 }

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Typography, Paper, Grid2, Box } from "@mui/material";
-import ReactFlow, { Background } from 'react-flow-renderer';
+import { Typography, Paper, Tabs, Tab, Grid2, Box } from "@mui/material";
+import ReactFlow, { Background } from "react-flow-renderer";
 import "./ComponentDetail.css";
+import NavBar from "./NavBar";
 
 const ComponentDetail = () => {
   const { name } = useParams();
   const [componentData, setComponentData] = useState(null);
+  const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/configs")
@@ -22,88 +24,144 @@ const ComponentDetail = () => {
     return <div>Loading...</div>;
   }
 
-  console.log('test')
+  console.log("test");
 
   const { metadata, spec } = componentData;
 
   const nodes = [
     {
-      id: '1',
+      id: "1",
       data: { label: metadata.name },
       position: { x: 400, y: 300 },
-      type: 'default',
-      style: { background: '#FFB6C1', border: '1px solid #FF69B4', borderRadius: '5px', padding: '10px' },
+      type: "default",
+      style: {
+        background: "#FFB6C1",
+        border: "1px solid #FF69B4",
+        borderRadius: "5px",
+        padding: "10px",
+      },
     },
-  
+
     ...spec.dependsOn.map((dep, index) => ({
       id: `dep-${index}`,
       data: { label: dep },
       position: { x: 800, y: 300 + index * 100 },
-      style: { background: '#ADD8E6', border: '1px solid #4682B4', borderRadius: '5px', padding: '10px' },
+      style: {
+        background: "#ADD8E6",
+        border: "1px solid #4682B4",
+        borderRadius: "5px",
+        padding: "10px",
+      },
     })),
-  
+
     ...spec.apiConsumedBy.map((api, index) => ({
       id: `api-${index}`,
       data: { label: api },
       position: { x: 100, y: 300 + index * 100 },
-      style: { background: '#ADD8E6', border: '1px solid #4682B4', borderRadius: '5px', padding: '10px' },
+      style: {
+        background: "#ADD8E6",
+        border: "1px solid #4682B4",
+        borderRadius: "5px",
+        padding: "10px",
+      },
     })),
-  
+
     {
-      id: 'owner-node',
+      id: "owner-node",
       data: { label: spec.owner },
       position: { x: 400, y: 100 },
-      style: { background: '#ADD8E6', border: '1px solid #4682B4', borderRadius: '5px', padding: '10px' },
+      style: {
+        background: "#ADD8E6",
+        border: "1px solid #4682B4",
+        borderRadius: "5px",
+        padding: "10px",
+      },
     },
-  
+
     {
-      id: 'system-node',
+      id: "system-node",
       data: { label: spec.system },
       position: { x: 400, y: 500 },
-      style: { background: '#ADD8E6', border: '1px solid #4682B4', borderRadius: '5px', padding: '10px' },
-    }
+      style: {
+        background: "#ADD8E6",
+        border: "1px solid #4682B4",
+        borderRadius: "5px",
+        padding: "10px",
+      },
+    },
   ];
-  
+
   const edges = [
     ...spec.dependsOn.map((dep, index) => ({
       id: `e1-${index}`,
-      source: '1',
+      source: "1",
       target: `dep-${index}`,
       animated: true,
-      label: 'dependsOn / dependencyOf',
+      label: "dependsOn / dependencyOf",
     })),
-  
+
     ...spec.apiConsumedBy.map((api, index) => ({
       id: `e2-${index}`,
-      source: '1',
+      source: "1",
       target: `api-${index}`,
       animated: true,
-      label: 'consumesApi / apiConsumedBy',
+      label: "consumesApi / apiConsumedBy"
     })),
     {
-      id: 'ownership-edge',
-      source: 'owner-node',
-      target: '1',
+      id: "ownership-edge",
+      source: "owner-node",
+      target: "1",
       animated: true,
-      label: 'ownerOf / ownedBy',
+      label: "ownerOf / ownedBy",
     },
     {
-      id: 'system-edge',
-      source: '1',
-      target: 'system-node',
+      id: "system-edge",
+      source: "1",
+      target: "system-node",
       animated: true,
-      label: 'hasPart / partOf',
-    }
+      label: "hasPart / partOf",
+    },
   ];
+
+  const handleTabChange = (event, newValue) => {
+    setActiveTab(newValue);
+  };
+
   return (
-    <> <div className="component-detail-container">
-    <div className="component-info">
-      {/* <Typography variant="h5" component="h2" gutterBottom>
-          About
-        </Typography>
-      <Typography variant="h4" component="h1" gutterBottom>
-        {metadata.name}
-      </Typography> */}
+    <>
+    <NavBar />
+    <div className="header">
+      <div>
+        <span className="component-type">Component — {spec.type}</span>
+        <h1 className="component-name">{metadata.name}</h1>
+      </div>
+      <div className="metadata">
+        <span className="owner">
+          Owner: <span className="team-a">{spec.owner}</span>
+        </span>
+        <span
+          className="lifecycle"
+          style={{ marginLeft: "20px", marginTop: "20px" }}
+        >
+          Lifecycle: <span className="status">{spec.lifecycle}</span>
+        </span>
+      </div>
+    </div>
+    <Box sx={{ width: "100%" }} className="navigationBar">
+      <Box sx={{ borderBottom: 1, borderColor: "divider",width: "100%" }}>
+        <Tabs value={activeTab} onChange={handleTabChange}>
+          <Tab label="Overview" />
+          <Tab label="CI/CD" />
+          <Tab label="API" />
+          <Tab label="DEPENDENCIES" />
+          <Tab label="DOCS" />
+          <Tab label="TODOS" />
+        </Tabs>
+      </Box>
+    </Box>
+
+    <div className="component-detail-container" >
+      <div className="component-info">
       <Typography variant="h5" component="div" gutterBottom>
           Desription
         </Typography>
@@ -178,21 +236,22 @@ const ComponentDetail = () => {
             </Box>
           </Grid2>
         </Grid2>
-    </div>
+      </div>
 
-    <div className="relations-container"  style={{'width':'80%'}} >
-      <Paper elevation={3} className="relations-paper">
-        <Typography variant="h5" component="h2" gutterBottom>
-          Relations
-        </Typography>
-        <div className="graph-container">
-          <ReactFlow nodes={nodes} edges={edges} fitView>
-            <Background />
-          </ReactFlow>
-        </div>
-      </Paper>
+      <div className="relations-container" style={{ width: "80%" }}>
+        <Paper elevation={3} className="relations-paper">
+          <Typography variant="h5" component="h2" gutterBottom>
+            Relations
+          </Typography>
+          <div className="graph-container">
+            <ReactFlow nodes={nodes} edges={edges} fitView>
+              <Background />
+            </ReactFlow>
+          </div>
+        </Paper>
+      </div>
     </div>
-  </div></>
+  </>
   );
 };
 
