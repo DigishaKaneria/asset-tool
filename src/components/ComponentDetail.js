@@ -98,6 +98,9 @@ const ComponentDetail = () => {
   return (
     <> <div className="component-detail-container">
     <div className="component-info">
+      <Typography variant="h5" component="h2" gutterBottom>
+          About
+        </Typography>
       <Typography variant="h4" component="h1" gutterBottom>
         {metadata.name}
       </Typography>
@@ -138,6 +141,9 @@ const ComponentDetail = () => {
 
     <div className="relations-container"  style={{'width':'80%'}} >
       <Paper elevation={3} className="relations-paper">
+        <Typography variant="h5" component="h2" gutterBottom>
+          Relations
+        </Typography>
         <div className="graph-container">
           <ReactFlow nodes={nodes} edges={edges} fitView>
             <Background />
