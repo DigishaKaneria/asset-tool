@@ -7,22 +7,26 @@
 .MuiTableCell-root {
   padding: 4px;
   font-size: 0.8rem;
+  font-family: sans-serif;
 }
 
 .MuiButton-root {
   margin: 2px;
   padding: 3px 6px;
   font-size: 0.75rem;
+  font-family: sans-serif;
 }
 
 .MuiTypography-h4 {
   font-size: 1.5rem;
+  font-family: sans-serif;
 }
 
 a {
   text-decoration: none;
   color: #1976d2;
   font-size: 0.8rem;
+  font-family: sans-serif;
 }
 
 a:hover {
@@ -36,4 +40,5 @@ a:hover {
 .MuiTableCell-head {
   font-size: 0.9rem;
   padding: 4px;
+  font-family: sans-serif;
 }
