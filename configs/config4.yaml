@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: petstore
-  description: Pet Store
+  name: queue-proxy
+  description: Queue Proxy
   tags:
     - react
     - microservice

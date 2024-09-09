@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Typography, Paper, Button } from "@mui/material";
+import { Typography, Paper } from "@mui/material";
 import ReactFlow, { Background } from 'react-flow-renderer';
 import "./ComponentDetail.css";
 

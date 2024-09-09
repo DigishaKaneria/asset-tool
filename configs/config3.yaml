@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: petstore
-  description: Pet Store
+  name: playback-order
+  description: Playback Order
   tags:
     - react
     - microservice
