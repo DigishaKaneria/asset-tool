@@ -61,61 +61,60 @@ const ComponentDetail = () => {
   ];
 
   return (
-    <div className="component-detail-container">
-      <div className="component-info">
-        <Typography variant="h4" component="h1" gutterBottom>
-          {metadata.name}
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          <strong>Description:</strong> {metadata.description}
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          <strong>Type:</strong> {spec.type}
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          <strong>Lifecycle:</strong> {spec.lifecycle}
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          <strong>Owner:</strong> {spec.owner}
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          <strong>System:</strong> {spec.system}
-        </Typography>
+    <> <div className="component-detail-container">
+    <div className="component-info">
+      <Typography variant="h4" component="h1" gutterBottom>
+        {metadata.name}
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        <strong>Description:</strong> {metadata.description}
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        <strong>Type:</strong> {spec.type}
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        <strong>Lifecycle:</strong> {spec.lifecycle}
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        <strong>Owner:</strong> {spec.owner}
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        <strong>System:</strong> {spec.system}
+      </Typography>
 
-        <Typography variant="h6" gutterBottom>
-          Tags:
-        </Typography>
-        {metadata.tags.map((tag, index) => (
-          <Button key={index} variant="contained" color="primary" style={{ margin: "5px" }}>
-            {tag}
-          </Button>
-        ))}
+      <Typography variant="h6" gutterBottom>
+        Tags:
+      </Typography>
+      {metadata.tags.map((tag, index) => (
+        <span style={{border: '1px solid #460074', borderRadius: '20px', padding: '5px 16px', marginRight: '3px', color: '#460074'}}>{tag}</span>
+      ))}
 
-        <Typography variant="h6" gutterBottom>
-          Links:
-        </Typography>
-        {metadata.links.map((link, index) => (
-          <div key={index}>
-            <a href={link.url} target="_blank" rel="noopener noreferrer">
-              {link.title} (Icon: {link.icon})
-            </a>
-          </div>
-        ))}
-      </div>
-
-      <div className="relations-container">
-        <Paper elevation={3} className="relations-paper">
-          <Typography variant="h5" component="h2" gutterBottom>
-            Relations
-          </Typography>
-          <div className="graph-container">
-            <ReactFlow nodes={nodes} edges={edges} fitView>
-              <Background />
-            </ReactFlow>
-          </div>
-        </Paper>
-      </div>
+      <Typography variant="h6" gutterBottom>
+        Links:
+      </Typography>
+      {metadata.links.map((link, index) => (
+        <div key={index}>
+          <a href={link.url} target="_blank" rel="noopener noreferrer" style={{color: '#460074'}}>
+            {link.title} (Icon: {link.icon})
+          </a>
+        </div>
+      ))}
     </div>
+
+    <div className="relations-container">
+      <Paper elevation={3} className="relations-paper">
+        <Typography variant="h5" component="h2" gutterBottom>
+          Relations
+        </Typography>
+        <div className="graph-container">
+          <ReactFlow nodes={nodes} edges={edges} fitView>
+            <Background />
+          </ReactFlow>
+        </div>
+      </Paper>
+    </div>
+  </div></>
+   
   );
 };
 
