@@ -30,36 +30,71 @@ const ComponentDetail = () => {
     {
       id: '1',
       data: { label: metadata.name },
-      position: { x: 150, y: 50 },
-      type: 'input',
+      position: { x: 400, y: 300 },
+      type: 'default',
+      style: { background: '#FFB6C1', border: '1px solid #FF69B4', borderRadius: '5px', padding: '10px' },
     },
+  
     ...spec.dependsOn.map((dep, index) => ({
       id: `dep-${index}`,
       data: { label: dep },
-      position: { x: 150, y: 150 + index * 100 },
+      position: { x: 800, y: 300 + index * 100 },
+      style: { background: '#ADD8E6', border: '1px solid #4682B4', borderRadius: '5px', padding: '10px' },
     })),
+  
     ...spec.apiConsumedBy.map((api, index) => ({
       id: `api-${index}`,
       data: { label: api },
-      position: { x: 150, y: 300 + index * 100 },
+      position: { x: 100, y: 300 + index * 100 },
+      style: { background: '#ADD8E6', border: '1px solid #4682B4', borderRadius: '5px', padding: '10px' },
     })),
+  
+    {
+      id: 'owner-node',
+      data: { label: spec.owner },
+      position: { x: 400, y: 100 },
+      style: { background: '#ADD8E6', border: '1px solid #4682B4', borderRadius: '5px', padding: '10px' },
+    },
+  
+    {
+      id: 'system-node',
+      data: { label: spec.system },
+      position: { x: 400, y: 500 },
+      style: { background: '#ADD8E6', border: '1px solid #4682B4', borderRadius: '5px', padding: '10px' },
+    }
   ];
-
+  
   const edges = [
     ...spec.dependsOn.map((dep, index) => ({
       id: `e1-${index}`,
       source: '1',
       target: `dep-${index}`,
       animated: true,
+      label: 'dependsOn / dependencyOf',
     })),
+  
     ...spec.apiConsumedBy.map((api, index) => ({
       id: `e2-${index}`,
-      source: `api-${index}`,
+      source: '1',
+      target: `api-${index}`,
+      animated: true,
+      label: 'consumesApi / apiConsumedBy',
+    })),
+    {
+      id: 'ownership-edge',
+      source: 'owner-node',
       target: '1',
       animated: true,
-    })),
+      label: 'ownerOf / ownedBy',
+    },
+    {
+      id: 'system-edge',
+      source: '1',
+      target: 'system-node',
+      animated: true,
+      label: 'hasPart / partOf',
+    }
   ];
-
   return (
     <> <div className="component-detail-container">
     <div className="component-info">
@@ -101,11 +136,8 @@ const ComponentDetail = () => {
       ))}
     </div>
 
-    <div className="relations-container">
+    <div className="relations-container"  style={{'width':'80%'}} >
       <Paper elevation={3} className="relations-paper">
-        <Typography variant="h5" component="h2" gutterBottom>
-          Relations
-        </Typography>
         <div className="graph-container">
           <ReactFlow nodes={nodes} edges={edges} fitView>
             <Background />
@@ -114,7 +146,6 @@ const ComponentDetail = () => {
       </Paper>
     </div>
   </div></>
-   
   );
 };
 

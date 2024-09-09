@@ -1,28 +1,28 @@
-/* TagsDashboard.css */
+
 
 .table-container {
-  margin: 5px; /* Reduce overall margin */
+  margin: 5px;
 }
 
 .MuiTableCell-root {
-  padding: 4px; /* Further reduce padding inside table cells */
-  font-size: 0.8rem; /* Reduce font size further */
+  padding: 4px;
+  font-size: 0.8rem;
 }
 
 .MuiButton-root {
-  margin: 2px; /* Further reduce margin around buttons */
-  padding: 3px 6px; /* Adjust button padding to be smaller */
-  font-size: 0.75rem; /* Smaller font size for buttons */
+  margin: 2px;
+  padding: 3px 6px;
+  font-size: 0.75rem;
 }
 
 .MuiTypography-h4 {
-  font-size: 1.5rem; /* Reduce the size of the heading further */
+  font-size: 1.5rem;
 }
 
 a {
   text-decoration: none;
   color: #1976d2;
-  font-size: 0.8rem; /* Smaller link font size */
+  font-size: 0.8rem;
 }
 
 a:hover {
@@ -30,10 +30,10 @@ a:hover {
 }
 
 .MuiTableRow-root {
-  height: auto; /* Keep rows flexible to content */
+  height: auto;
 }
 
 .MuiTableCell-head {
-  font-size: 0.9rem; /* Further reduce font size for header cells */
-  padding: 4px; /* Reduce padding in header cells */
+  font-size: 0.9rem;
+  padding: 4px;
 }

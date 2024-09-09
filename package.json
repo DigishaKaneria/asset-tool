@@ -19,9 +19,11 @@
     "react-flow-renderer": "^10.3.17",
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
+    "reactflow": "^11.11.4",
     "web-vitals": "^2.1.4",
     "yaml": "^2.5.1",
-    "yamljs": "^0.3.0"
+    "yamljs": "^0.3.0",
+    "zustand": "^4.5.5"
   },
   "scripts": {
     "start": "react-scripts start",
