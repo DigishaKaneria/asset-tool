@@ -128,7 +128,7 @@ const ComponentDetail = () => {
 
   return (
     <>
-    <div style={{'marginLeft':'230px'}}>
+    <div style={{'marginLeft':'230px','overflowX':'hidden'}}>
     <div className="header">
       <div>
         <span className="component-type">Component — {spec.type}</span>

@@ -20,5 +20,6 @@
   
   .sidebar .MuiListItem-root:hover {
     background-color: #6b3fb1;
+    width: 100%;
   }
   
