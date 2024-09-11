@@ -17,37 +17,37 @@ const SideBar = () => {
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
-          <ListItemText primary="Overview" />
+          <ListItemText primary="Overview" style={{'color':'white'}}/>
         </ListItem>
         <ListItem button component={Link} to="/cicd">
           <ListItemIcon>
             <BuildIcon />
           </ListItemIcon>
-          <ListItemText primary="CI/CD" />
+          <ListItemText primary="CI/CD" style={{'color':'white'}}/>
         </ListItem>
         <ListItem button component={Link} to="/api">
           <ListItemIcon>
             <CodeIcon />
           </ListItemIcon>
-          <ListItemText primary="API" />
+          <ListItemText primary="API" style={{'color':'white'}} />
         </ListItem>
         <ListItem button component={Link} to="/dependencies">
           <ListItemIcon>
             <LinkIcon />
           </ListItemIcon>
-          <ListItemText primary="Dependencies" />
+          <ListItemText primary="Dependencies" style={{'color':'white'}}/>
         </ListItem>
         <ListItem button component={Link} to="/docs">
           <ListItemIcon>
             <DescriptionIcon />
           </ListItemIcon>
-          <ListItemText primary="Docs" />
+          <ListItemText primary="Docs" style={{'color':'white'}}/>
         </ListItem>
         <ListItem button component={Link} to="/todos">
           <ListItemIcon>
             <TaskIcon />
           </ListItemIcon>
-          <ListItemText primary="Todos" />
+          <ListItemText primary="Todos" style={{'color':'white'}}/>
         </ListItem>
       </List>
       <Divider />
