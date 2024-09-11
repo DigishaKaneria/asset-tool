@@ -10,9 +10,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import NavBar from "./NavBar";
 import TablePagination from "@mui/material/TablePagination";
-import SideBar from "./SideBar"; // adjust the path if needed
 
 const TagsDashboard = () => {
   const [configsData, setConfigsData] = useState(null);
@@ -51,14 +49,6 @@ const TagsDashboard = () => {
   console.log("configsData", configsData);
 
   return (
-    <div className="container">
-      <div className="navbar">
-        <NavBar />
-      </div>
-      <div className="main-content">
-        <div className="sidebar">
-          <SideBar />
-        </div>
         <div className="table-container" style={{'marginLeft':'250px','oveflowY':'hidden'}}>
           <Typography variant="h4" component="h1" gutterBottom>
             Catalog
@@ -169,8 +159,6 @@ const TagsDashboard = () => {
             />
           </Paper>
         </div>
-      </div>{" "}
-    </div>
   );
 };
 

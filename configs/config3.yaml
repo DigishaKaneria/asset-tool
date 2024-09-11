@@ -1,11 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: playback-order
-  description: Playback Order
+  name: tpp-navigaton-api-iac
+  description: tpp navigation api
   tags:
-    - react
-    - microservice
+    - navigation-api
   links:
     - url: https://example.com/api
       title: API Documentation
@@ -15,7 +14,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: team-b
-  system: artist-management
+  owner: Keuver Arther
+  system: navigation-management
   dependsOn: ["resource:users-db"]
-  apiConsumedBy: ["component:www-users"]
+  apiConsumedBy: ["component:www-travelers"]

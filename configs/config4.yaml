@@ -1,11 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: queue-proxy
-  description: Queue Proxy
+  name: bi-rapiddb-tool
+  description: Rapid DB tool for migration and validation of DB Forms across regions
   tags:
-    - react
-    - microservice
+    - rapiddb-tool
   links:
     - url: https://example.com/api
       title: API Documentation
@@ -15,7 +14,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: team-b
-  system: artist-management
+  owner: James Jack
+  system: rapid-db-tool
   dependsOn: ["resource:users-db"]
-  apiConsumedBy: ["component:www-users"]
+  apiConsumedBy: ["component:www-travelers"]

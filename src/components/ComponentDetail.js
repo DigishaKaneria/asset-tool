@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { Typography, Paper, Tabs, Tab, Grid2, Box } from "@mui/material";
 import ReactFlow, { Background } from "react-flow-renderer";
 import "./ComponentDetail.css";
-import NavBar from "./NavBar";
 
 const ComponentDetail = () => {
   const { name } = useParams();
@@ -129,7 +128,7 @@ const ComponentDetail = () => {
 
   return (
     <>
-    <NavBar />
+    <div style={{'marginLeft':'230px'}}>
     <div className="header">
       <div>
         <span className="component-type">Component — {spec.type}</span>
@@ -208,12 +207,12 @@ const ComponentDetail = () => {
 
           <Grid2 item xs={12}>
             <Box>
-              <Typography variant="subtitle2" color="textSecondary">
+              <Typography variant="subtitle2" color="textSecondary" style={{'width':'200px'}}>
                 Tags
               </Typography>
               <Typography variant="body2">
                 {metadata.tags.map((tag, index) => (
-                  <span style={{ border: '1px solid #460074', borderRadius: '20px', padding: '5px 16px', marginRight: '3px', color: '#460074' }}>{tag}</span>
+                  <span style={{ border: '1px solid #460074', borderRadius: '20px', padding: '5px 16px', marginRight: '3px', color: '#460074', 'width':'200px' }}>{tag}</span>
                 ))}
               </Typography>
             </Box>
@@ -251,6 +250,8 @@ const ComponentDetail = () => {
         </Paper>
       </div>
     </div>
+    </div>
+    
   </>
   );
 };

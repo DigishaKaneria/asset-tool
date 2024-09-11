@@ -1,11 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: petstore
-  description: Pet Store
+  name: scbp-db-forms
+  description: SCBP DB FORMS
   tags:
-    - react
-    - microservice
+    - perl
+    - batchfile
   links:
     - url: https://example.com/api
       title: API Documentation
@@ -15,7 +15,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: team-b
-  system: artist-management
+  owner: Michelle Franco
+  system: scbp-forms
   dependsOn: ["resource:users-db"]
-  apiConsumedBy: ["component:www-users"]
+  apiConsumedBy: ["component:www-travelers-bi"]
