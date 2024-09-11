@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: tpp-navigaton-api-iac
-  description: tpp navigation api
+  description: Tpp navigation api
   tags:
     - navigation-api
   links:
